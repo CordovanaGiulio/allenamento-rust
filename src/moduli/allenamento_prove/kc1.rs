@@ -1,10 +1,9 @@
 use chrono::{NaiveDate, TimeZone, Utc};
 use rand::Rng;
+use crate::moduli::allenamento_prove::classes::giocatore::Giocatore;
+use crate::moduli::allenamento_prove::classes::giocatore::TurnoGiocatore;
 
-use crate::moduli::allenamento_prove::giocatore::Giocatore;
-use crate::moduli::allenamento_prove::giocatore::TurnoGiocatore;
-
-use super::giocatore::VittoriaGiocatore;
+use super::classes::giocatore::VittoriaGiocatore;
 
 // kc1.1
 // Scrivere un programma che calcola il MCD di due numeri positivi immessi attraverso Scanner.
@@ -95,7 +94,7 @@ pub fn gioco_dadi (){
     while giocatore1.vittoria == VittoriaGiocatore::Tbd && giocatore2.vittoria == VittoriaGiocatore::Tbd {
         giocatore1.tiro_dadi();
         giocatore2.tiro_dadi();
-        println!("Turno finito\ngiocatore1: {:?}\ngiocatore2: {:?}", giocatore1,giocatore2);
+        println!("Turno finito\n{:?}\n{:?}", giocatore1,giocatore2);
     }
     if giocatore1.vittoria == VittoriaGiocatore::Vinto {
         println!("Ha vinto il primo giocatore");
@@ -109,3 +108,4 @@ pub fn gioco_dadi (){
         panic!("giocatore1: {:?},giocatore2: {:?}", giocatore1,giocatore2);
     }
 }
+
