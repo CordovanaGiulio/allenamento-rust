@@ -1,9 +1,9 @@
 use chrono::{NaiveDate, TimeZone, Utc};
 use rand::Rng;
-use crate::moduli::allenamento_prove::classes::giocatore::Giocatore;
-use crate::moduli::allenamento_prove::classes::giocatore::TurnoGiocatore;
+use crate::moduli::allenamento_prove::classes::kc1_5_giocatore::Giocatore;
+use crate::moduli::allenamento_prove::classes::kc1_5_giocatore::TurnoGiocatore;
 
-use super::classes::giocatore::VittoriaGiocatore;
+use super::classes::kc1_5_giocatore::VittoriaGiocatore;
 
 // kc1.1
 // Scrivere un programma che calcola il MCD di due numeri positivi immessi attraverso Scanner.

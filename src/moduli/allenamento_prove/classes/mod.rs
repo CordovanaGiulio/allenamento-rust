@@ -1,4 +1,6 @@
-pub mod giocatore;
-pub mod studente_voto_kc2_1;
-pub mod studente_kc2_2;
-pub mod esame_kc2_2;
+pub mod kc1_5_giocatore;
+pub mod kc2_1_studente_voto;
+pub mod kc2_2_studente;
+pub mod kc2_2_esame;
+pub mod kc2_3_posto;
+pub mod kc2_3_vagone;
