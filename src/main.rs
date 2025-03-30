@@ -5,7 +5,6 @@ fn main() {
     PrimoAll::prove();
 }
 
-
 //ESERCIZIO 1 - prende array e inverte
 // let mut array_primo_esercizio: [i8; 10]=[1;10];
 // for i in 0..9 {

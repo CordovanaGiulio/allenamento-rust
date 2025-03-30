@@ -5,6 +5,36 @@ pub struct Vagone {
     prima_classe: [Posto; 20]
 }
 impl Vagone {
+    //inizializzazione
+    pub fn new()->Vagone{
+        Vagone {
+            seconda_classe: Self::new_seconda_classe(),
+            prima_classe: Self::new_prima_classe(),
+        }
+    }
+    fn new_seconda_classe()->[Posto; 30]{
+        let mut seconda_classe: [Posto; 30]=Default::default();
+        for i in 0..seconda_classe.len() {
+            seconda_classe[i] = Posto{
+                classe: Classe::SecondaClasse,
+                numero_posizione: i as i32,
+                occupato: false,
+            }
+        }
+        return seconda_classe;
+    }
+    fn new_prima_classe()->[Posto; 20]{
+        let mut prima_classe: [Posto; 20]=Default::default();
+        for i in 0..prima_classe.len() {
+            prima_classe[i] = Posto{
+                classe: Classe::PrimaClasse,
+                numero_posizione: i as i32,
+                occupato: false,
+            }
+        }
+        return prima_classe;
+    }
+    //stampa
     pub fn stampa_vagone(&self){
         self.stampa_prima_classe();
         self.stampa_seconda_classe();
@@ -32,34 +62,7 @@ impl Vagone {
             num+=1;
         }
     }
-    fn new_seconda_classe()->[Posto; 30]{
-        let mut seconda_classe: [Posto; 30]=Default::default();
-        for i in 0..seconda_classe.len() {
-            seconda_classe[i] = Posto{
-                classe: Classe::SecondaClasse,
-                numero_posizione: i as i32,
-                occupato: true,
-            }
-        }
-        return seconda_classe;
-    }
-    fn new_prima_classe()->[Posto; 20]{
-        let mut prima_classe: [Posto; 20]=Default::default();
-        for i in 0..prima_classe.len() {
-            prima_classe[i] = Posto{
-                classe: Classe::PrimaClasse,
-                numero_posizione: i as i32,
-                occupato: false,
-            }
-        }
-        return prima_classe;
-    }
-    pub fn new()->Vagone{
-        Vagone {
-            seconda_classe: Self::new_seconda_classe(),
-            prima_classe: Self::new_prima_classe(),
-        }
-    }
+    //prenotazione e controllo posto
     pub fn has_posto_libero(&self, classe:&Classe)->bool{
         match classe {
             Classe::PrimaClasse => {
