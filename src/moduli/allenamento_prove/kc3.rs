@@ -25,7 +25,7 @@ pub fn calendario(){
     anno = read_num_positivo();
 
     let data: NaiveDate;
-    match NaiveDate::from_ymd_opt(anno.try_into().unwrap(), mese, 2){
+    match NaiveDate::from_ymd_opt(anno.try_into().unwrap(), mese, giorno){
         Some(new) => data=new,
         None => panic!("Data non valida"),
     };
