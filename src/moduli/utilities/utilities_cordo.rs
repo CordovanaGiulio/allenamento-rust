@@ -27,23 +27,22 @@ pub const SIZE: usize = 9;
 //     print!("\n");
 // }
 pub fn read_num_positivo() -> u32{
-    let mut input: String="".to_string();
+    let mut input: String;
     let mut flag:bool= true;
     let mut num:u32=0;
     while flag {
+        input=String::new();
         io::stdin()
-            .read_line(&mut input).expect("input non valido");
-        match input.parse(){
+            .read_line(&mut input)
+            .expect("input non valido");
+        match input.trim().parse::<u32>(){
             Ok(res) => {
-                if res<0 {
-                    flag=false;
-                }else{
-                    num = res;
-                }
+                num = res;
+                flag =false;
+                
             },
             Err(_) => {
                 println!("Inserisci un numero");
-                flag =false;
             },
         }
     }
