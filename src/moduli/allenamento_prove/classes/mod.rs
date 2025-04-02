@@ -4,3 +4,4 @@ pub mod kc2_2_studente;
 pub mod kc2_2_esame;
 pub mod kc2_3_posto;
 pub mod kc2_3_vagone;
+pub mod kc3_1;
