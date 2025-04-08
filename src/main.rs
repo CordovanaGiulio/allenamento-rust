@@ -1,8 +1,10 @@
 mod moduli;
 use moduli::allenamento_prove::primo_allenamento as PrimoAll;
+use moduli::gestione_ordini::execute_gestione_ordini as GestioneOrdini;
 
 fn main() {
-    PrimoAll::prove();
+    GestioneOrdini::execute();
+    // PrimoAll::prove();
 }
 
 //ESERCIZIO 1 - prende array e inverte
